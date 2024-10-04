@@ -4,4 +4,4 @@ Repositório, referente aos estudos de algoritmos da disciplina da faculdade de 
 
 2° Semestre de 2024.
 
-Arquivos de aula e algoritmos feitos durante as aulas. 
+Algoritmos feitos durante as aulas. 

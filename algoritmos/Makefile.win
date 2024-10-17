@@ -1,30 +1,30 @@
-# Project: Repetidor
+# Project: qtd_cinema_p1
 # Makefile created by Dev-C++ 4.9.9.2
 
 CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = 
-OBJ  = repetidor.o $(RES)
-LINKOBJ  = repetidor.o $(RES)
+OBJ  = qtd_cinema_p1.o $(RES)
+LINKOBJ  = qtd_cinema_p1.o $(RES)
 LIBS =  -L"C:/Dev-Cpp/lib"  
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
-BIN  = Repetidor.exe
+BIN  = qtd_cinema_p1.exe
 CXXFLAGS = $(CXXINCS)  
 CFLAGS = $(INCS)  
 RM = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: all-before Repetidor.exe all-after
+all: all-before qtd_cinema_p1.exe all-after
 
 
 clean: clean-custom
 	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-	$(CPP) $(LINKOBJ) -o "Repetidor.exe" $(LIBS)
+	$(CPP) $(LINKOBJ) -o "qtd_cinema_p1.exe" $(LIBS)
 
-repetidor.o: repetidor.cpp
-	$(CPP) -c repetidor.cpp -o repetidor.o $(CXXFLAGS)
+qtd_cinema_p1.o: qtd_cinema_p1.cpp
+	$(CPP) -c qtd_cinema_p1.cpp -o qtd_cinema_p1.o $(CXXFLAGS)

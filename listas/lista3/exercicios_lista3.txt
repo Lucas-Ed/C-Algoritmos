@@ -1,0 +1,460 @@
+1)-
+// Lista 3-exercicío 1, vetores.
+
+//fazer 3 vetores de 7 posições
+//um deles tera caracteres preenchido com quatro operações aritiméticas básicas,
+//O programa
+//deverá armazenar em um quarto vetor o resultado do calculo entre os dois
+//primeiros vetores numéricos levando em consideração as operações
+//aritméticas informadas no quarto vetor. Exemplo
+
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    // Setando idioma.
+    setlocale(LC_ALL, "Portuguese");
+    // Criando os vetores
+    int vetor_1[7] = {10, 5, 7, 11, 3, 45, 20};
+    int vetor_2[7] = {5, 2, 6, 4, 1, 30, 10};
+    char vetor_3[4] = {'+', '*', '-', '/'};
+    int vetor_4[7] = { };
+//----------------------Soma------------------------------------------
+
+    // fazendo a operação de soma
+    // Acessando o operador '+' na posição 0 do vetor_3
+    char operador = vetor_3[0];
+    // Fazendo a operação de soma entre o vetor_1 e vetor_2.
+    for(int i=0; i < 7; i++){
+        if (operador == '+'){
+            vetor_4[i] = vetor_1[i] + vetor_2[i];
+
+        }
+    }
+    // Exibindo os valores do vetor de resultados do operador '+'
+    cout << "Resultados dos cálculos:" << endl;
+    for(int i=0; i < 7; i++){
+        //cout << "Resultado:" << vetor_4[i] << endl
+        cout << vetor_1[i] << " " << operador << " " << vetor_2[i] << " = " << vetor_4[i] << endl;
+    }
+//--------------------Multiplicação------------------------------------------
+    // Acessando o operador '+' na posição 1 do vetor_3
+    char operador_00 = vetor_3[1];
+
+    // Fazendo a operação de multiplicação entre o vetor_1 e vetor_2.
+    for(int i=0; i < 7; i++){
+        if (operador_00 == '*'){
+            vetor_4[i] = vetor_1[i] * vetor_2[i];
+
+        }
+    }
+    // Exibindo os valores do vetor de resultados do operador '+'
+    cout << "Resultados dos cálculos:" << endl;
+    for(int i=0; i < 7; i++){
+        //cout << "Resultado:" << vetor_4[i] << endl
+        cout << vetor_1[i] << " " << operador_00 << " " << vetor_2[i] << " = " << vetor_4[i] << endl;
+    }
+//--------------------Subtração------------------------------------------
+    // Acessando o operador '+' na posição 2 do vetor_3
+    char operador_01 = vetor_3[2];
+
+    // Fazendo a operação de multiplicação entre o vetor_1 e vetor_2.
+    for(int i=0; i < 7; i++){
+        if (operador_01 == '-'){
+            vetor_4[i] = vetor_1[i] - vetor_2[i];
+
+        }
+    }
+    // Exibindo os valores do vetor de resultados do operador '+'
+    cout << "Resultados dos cálculos:" << endl;
+    for(int i=0; i < 7; i++){
+        //cout << "Resultado:" << vetor_4[i] << endl
+        cout << vetor_1[i] << " " << operador_01 << " " << vetor_2[i] << " = " << vetor_4[i] << endl;
+    }
+//--------------------Divisão------------------------------------------
+    // Acessando o operador '+' na posição 3 do vetor_3
+    char operador_02 = vetor_3[3];
+
+    // Fazendo a operação de multiplicação entre o vetor_1 e vetor_2.
+    for(int i=0; i < 7; i++){
+        if (operador_02 == '/'){
+            vetor_4[i] = vetor_1[i] / vetor_2[i];
+
+        }
+    }
+    // Exibindo os valores do vetor de resultados do operador '+'
+    cout << "Resultados dos cálculos:" << endl;
+    for(int i=0; i < 7; i++){
+        //cout << "Resultado:" << vetor_4[i] << endl
+        cout << vetor_1[i] << " " << operador_02 << " " << vetor_2[i] << " = " << vetor_4[i] << endl;
+    }
+    return 0;
+}
+
+2)-
+
+// Lista 3-exercicío 2, Palestras.
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    // Setando idioma.
+    setlocale(LC_ALL, "Portuguese");
+
+    // tipando variáveis.
+    int op, codigo;
+    
+    // Matriz que armazena os dados das palestras
+    string palestras[4][3] = {
+        {"Linux", "Auditorio 1", "8h as 9h"},
+        {"Recuperação de Desastres", "Auditorio 2", "9h as 10h"},
+        {"Windows Server", "Auditorio 3", "13h as 14h"},
+        {"Lógica e Programação", "Auditorio Principal", "Horário não definido"}
+    };
+
+   
+    do{
+	// Menu de opções
+	cout << "+==================================+ \n";
+    cout << "| - Selecione a Palestra           | \n";
+	cout << "| 1- Palestra Linux                | \n";
+	cout << "| 2- Recuperação de Desastres      | \n";
+	cout << "| 3- Palestra Windows Server       | \n";
+	cout << "| 4- Palestra Lógica e Programação | \n";
+	cout << "| 5- Sair                          | \n";
+	cout << "+==================================+ \n";
+	cout << "Escolha uma opção: \n";
+	cin >> op;
+			
+
+    // Verifica se o código está no intervalo válido
+    if (op < 1 || op > 4) {
+        cout << "Código inválido. Tente novamente com um valor entre 1 e 4." << endl;
+    } else {
+        // Ajusta o índice para acessar a matriz (índice começa em 0)
+        codigo -= 1;
+
+        cout << "Informações da palestra:" << endl;
+        cout << "Título: " << palestras[codigo][0] << endl;
+        cout << "Local: " << palestras[codigo][1] << endl;
+        cout << "Horário: " << palestras[codigo][2] << endl;
+    }
+	}while(op !=5);
+
+    return 0;
+}
+
+3)-
+//Lista 3-exercicío 3, N's a á f.
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+    setlocale(LC_ALL, "Portuguese");
+
+    // Declarando os vetores de 2 posições
+    int vetorA[2];
+    int vetorB[2];
+    int soma, somaB, somaA, somaC, produtoEscalar;
+
+    // Preenchendo o vetor com dados do usuário
+    cout << "A) Vetor-A Informe o primeiro número: ";
+    cin >> vetorA[0];
+    
+    cout << "A)-A Informe o segundo número: ";
+    cin >> vetorA[1];
+    
+    cout << "A) Vetor-B Informe o primeiro número: ";
+    cin >> vetorB[0];
+    
+    cout << "A)-B Informe o segundo número: ";
+    cin >> vetorB[1];
+
+    // Calculando as operações
+    soma = vetorA[0] + vetorA[1] + vetorB[0] + vetorB[1];
+    somaA = vetorA[0] + vetorA[1];
+    somaB = vetorB[0] + vetorB[1];
+    somaC = (vetorB[0] + vetorB[1]) - (vetorA[0] + vetorA[1]);
+
+    // Cálculo do produto escalar
+    produtoEscalar = vetorA[0] * vetorB[0] + vetorA[1] * vetorB[1];
+
+    // Mostrando os resultados
+    cout << "B) A soma do vetorA: " << somaA << endl;
+    cout << "C) A soma do vetorB: " << somaB << endl;
+    cout << "D) Soma dos números informados: " << soma << endl;
+    cout << "E) Subtração B de A: " << somaC << endl;
+    cout << "F) Produto escalar de A por B: " << produtoEscalar << endl;
+
+    return 0;
+}
+
+4)-
+//Lista 3-exercicío 4, Ordenação modo decrescente.
+#include <iostream>
+#include<locale>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "Portuguese");
+    // Declarando o vetor com 2 elementos
+    int vetor[2];
+
+    // Solicitando os valores ao usuário
+    cout << "Digite o primeiro número: ";
+    cin >> vetor[0];
+
+    cout << "Digite o segundo número: ";
+    cin >> vetor[1];
+
+    // Ordenando o vetor de forma crescente
+    if (vetor[0] > vetor[1]) {
+        // Troca os valores
+        int temp = vetor[0];
+        vetor[0] = vetor[1];
+        vetor[1] = temp;
+    }
+
+    // Exibindo o vetor ordenado
+    cout << "Vetor ordenado de forma crescente: " << vetor[0] << ", " << vetor[1] << endl;
+
+    return 0;
+}
+
+5)-
+//Lista 3-exercicío 5, matrix 10X10.
+// Leia uma matriz 10 x 10 e escreva a localização (linha e a coluna) do maior
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    const int LINHAS = 10;
+    const int COLUNAS = 10;
+    // Matriz 10 X 10.
+    int matriz[10][10] = {
+        {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15, 16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25, 26, 27, 28, 29, 30},
+        {31, 32, 33, 34, 35, 36, 37, 38, 39, 40},
+        {41, 42, 43, 44, 45, 46, 47, 48, 49, 50},
+        {51, 52, 53, 54, 55, 56, 57, 58, 59, 60},
+        {61, 62, 63, 64, 65, 66, 67, 68, 69, 70},
+        {71, 72, 73, 74, 75, 76, 77, 78, 79, 80},
+        {81, 82, 83, 84, 85, 86, 87, 88, 89, 90},
+        {91, 92, 93, 94, 95, 96, 97, 98, 99, 100}
+    };
+
+    // Inicialização da busca pelo maior valor.
+    int maior = matriz[0][0];
+    int linhaMaior = 0, colunaMaior = 0;
+
+    // Busca do maior valor e sua localização.
+    for (int i = 0; i < LINHAS; i++) {
+        for (int j = 0; j < COLUNAS; j++) {
+            if (matriz[i][j] > maior) {
+                maior = matriz[i][j];
+                linhaMaior = i;
+                colunaMaior = j;
+            }
+        }
+    }
+
+    // Saída do maior valor e sua localização.
+    cout << "Maior valor: " << maior << endl;
+    cout << "Localização: linha " << linhaMaior << ", coluna " << colunaMaior << endl;
+
+    return 0;
+}
+
+6)-
+
+//Lista 3-exercicío 6, matrix 4X4.
+// Leia duas matrizes 4 x 4 e escreva uma terceira com os maiores elementos entre as duas primeiras.
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    const int LINHAS = 4;
+    const int COLUNAS = 4;
+    
+    // Inicialização das matrizes
+    int matriz_1[4][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    int matriz_2[4][4] = {
+        {1, 2, 3, 4},
+        {5, 20, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    int matriz_3[4][4]; // Matriz para armazenar os maiores elementos
+
+    // Preenchendo a matriz 3 com os maiores elementos
+    for (int i = 0; i < LINHAS; i++) {
+        for (int j = 0; j < COLUNAS; j++) {
+            matriz_3[i][j] = max(matriz_1[i][j], matriz_2[i][j]);
+        }
+    }
+
+    // Saída da matriz resultante
+    cout << "Matriz com os maiores elementos entre matriz_1 e matriz_2:\n";
+    for (int i = 0; i < LINHAS; i++) {
+        for (int j = 0; j < COLUNAS; j++) {
+            cout << matriz_3[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+7)-
+//Lista 3-exercicío 7, funções.
+#include <iostream>
+#include <cmath> // Para a função pow e constante M_PI
+
+using namespace std;
+
+// Função para calcular o volume da esfera
+double calcularVolumeEsfera(double raio) {
+    const double PI = M_PI; // Valor de PI definido na biblioteca <cmath>
+    return (4.0 / 3.0) * PI * pow(raio, 3);
+}
+
+int main() {
+    double raio;
+
+    // Entrada do raio da esfera
+    cout << "Digite o raio da esfera: ";
+    cin >> raio;
+
+    // Chamada da função e exibição do resultado
+    double volume = calcularVolumeEsfera(raio);
+    cout << "O volume da esfera com raio " << raio << " é: " << volume << endl;
+
+    return 0;
+}
+
+
+8)-
+//Lista 3-exercicío 8, funções.
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+// Função para verificar se o número é primo
+bool ehPrimo(int numero) {
+    if (numero <= 1) {
+        return false; // Números menores ou iguais a 1 não são primos
+    }
+
+    for (int i = 2; i <= numero / 2; i++) {
+        if (numero % i == 0) {
+            return false; // Encontrou um divisor, não é primo
+        }
+    }
+
+    return true; // Nenhum divisor encontrado, é primo
+}
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+    int numero;
+
+    // Entrada do número
+    cout << "Digite um número inteiro e positivo: ";
+    cin >> numero;
+
+    // Verifica se o número é positivo
+    if (numero < 0) {
+        cout << "O número deve ser positivo!" << endl;
+        return 1; // Finaliza o programa com erro
+    }
+
+    // Chamada da função e exibição do resultado
+    if (ehPrimo(numero)) {
+        cout << "O número " << numero << " é primo." << endl;
+    } else {
+        cout << "O número " << numero << " não é primo." << endl;
+    }
+
+    return 0;
+}
+
+
+9)-
+
+//Lista 3-exercicío 9, funções.
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+// Função para verificar se um número é perfeito
+bool ehPerfeito(int numero) {
+    if (numero <= 0) {
+        return false; // Números não positivos não são perfeitos
+    }
+
+    int somaDivisores = 0;
+
+    // Calcula a soma dos divisores exceto o próprio número
+    for (int i = 1; i <= numero / 2; i++) {
+        if (numero % i == 0) {
+            somaDivisores += i;
+        }
+    }
+
+    // Retorna true se a soma dos divisores for igual ao número
+    return somaDivisores == numero;
+}
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+    int numero;
+
+    // Entrada do número
+    cout << "Digite um número inteiro e positivo: ";
+    cin >> numero;
+
+    // Verifica se o número é positivo
+    if (numero <= 0) {
+        cout << "O número deve ser positivo!" << endl;
+        return 1; // Finaliza o programa com erro
+    }
+
+    // Chamada da função e exibição do resultado
+    if (ehPerfeito(numero)) {
+        cout << "O número " << numero << " é perfeito." << endl;
+    } else {
+        cout << "O número " << numero << " não é perfeito." << endl;
+    }
+
+    return 0;
+}
+
+
+
+
